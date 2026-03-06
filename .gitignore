@@ -1,2 +1,9 @@
+# Ignore everything in results except .gitkeep
 results/*
 !results/.gitkeep
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore JMeter log file
+*.log
