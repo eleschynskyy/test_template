@@ -9,7 +9,7 @@ execute_test() {
     TEST_DIR=$BASE_DIR/tests
     RESULTS_DIR=$BASE_DIR/results
     shopt -s extglob
-    rm -rf $RESULTS_DIR/!(.gitkeep)
+    # rm -rf "$RESULTS_DIR"/!(.gitkeep)
 
     jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl
 }
