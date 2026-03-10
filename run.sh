@@ -5,6 +5,7 @@ mode="run"
 
 execute_test() {
     echo "Run jmeter test"
+    ls -l
     TEST_DIR=$BASE_DIR/tests
     RESULTS_DIR=$BASE_DIR/results
     shopt -s extglob
