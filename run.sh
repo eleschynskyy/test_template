@@ -5,22 +5,16 @@ mode="run"
 
 execute_test() {
     echo "Run jmeter test"
+    TEST_DIR=$BASE_DIR/tests
+    RESULTS_DIR=$BASE_DIR/results
+    shopt -s extglob
+    rm -rf $RESULTS_DIR/!(.gitkeep)
 
-    SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-    echo "BASE_DIR=$BASE_DIR : SCRIPT_DIR=$SCRIPT_DIR"
-    # TEST_DIR=$SCRIPT_DIR/tests
-    # RESULTS_DIR=$SCRIPT_DIR/results
-    # shopt -s extglob
-    # rm -rf $RESULTS_DIR/!(.gitkeep)
-
-    # jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl
+    jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl
 }
 
 check() {
-    echo "Checking folder"
-
-    SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-    echo "BASE_DIR=$BASE_DIR : SCRIPT_DIR=$SCRIPT_DIR"
+    echo "Validation successful [BASE_DIR=$BASE_DIR]"
 }
 
 parse_args() {
