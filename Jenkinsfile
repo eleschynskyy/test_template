@@ -1,6 +1,17 @@
 @Library("pipeline_library") _
 
-TestPipeline([
-    SERVICE_NAME: 'sandbox',
-    VARIABLES: ['ORG', 'TOKEN']
-])
+pipeline {
+    agent { label 'nft' }
+    stages {
+        stage('Run') {
+            steps {
+                script {
+                    TestPipeline([
+                        SERVICE_NAME: 'sandbox',
+                        VARIABLES: ['ORG', 'TOKEN']
+                    ])
+                }
+            }
+        }
+    }
+}
