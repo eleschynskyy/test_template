@@ -54,7 +54,6 @@ cleanup_workspace_logs() {
 }
 
 main() {
-  echo "RUN.SH"
   parse_args "$@"
 
   case "$mode" in
@@ -67,3 +66,5 @@ main() {
       ;;
   esac
 }
+
+main "$@"
