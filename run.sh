@@ -19,14 +19,9 @@ execute_test() {
     echo "Run jmeter test"
     TEST_DIR=$BASE_DIR/tests
     RESULTS_DIR=$BASE_DIR/results
-
     CMD="jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl $(parse_input_variables "$variables")"
-
-    echo "Command:"
-    echo "$CMD"
-
-    # eval "$CMD"
-
+    echo "Running $CMD"
+    eval "$CMD"
     # jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl $(parse_input_variables "$variables")
     cat $RESULTS_DIR/test.jtl
 }
