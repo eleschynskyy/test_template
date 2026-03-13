@@ -51,6 +51,7 @@ parse_args() {
       p) 
         variables=${OPTARG,,}
         echo "variables => $variables"
+        ;;
       *)
         echo "ERROR: Unknown argument: $option"
         exit 1
