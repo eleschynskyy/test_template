@@ -54,7 +54,7 @@ parse_args() {
         echo "mode => $mode"
         ;;
       p) 
-        variables=${OPTARG,,}
+        variables="$OPTARG"
         echo "variables => $variables"
         ;;
       *)
