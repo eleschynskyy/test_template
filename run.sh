@@ -1,12 +1,26 @@
 #!/bin/bash
 
 export BASE_DIR="$(pwd)"
-mode="run" 
+mode="run"
+variables=""
+
+parse_input_variables() {
+  local input="$1"
+  local result=""
+  IFS=',' read -ra pairs <<< "$input"
+
+  for p in "${pairs[@]}"; do
+    result+=" -J$p"
+  done
+
+  echo "${result# }"
+}
 
 execute_test() {
     echo "Run jmeter test"
     TEST_DIR=$BASE_DIR/tests
     RESULTS_DIR=$BASE_DIR/results
+    parse_input_variables $variables
 
     jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl
     cat $RESULTS_DIR/test.jtl
@@ -23,7 +37,7 @@ parse_args() {
   fi
 
   OPTIND=1
-  while getopts ":m:" option; do
+  while getopts ":m:p:" option; do
     echo "Getting arg $option..."
     case $option in
       m)
@@ -34,6 +48,9 @@ parse_args() {
         fi
         echo "mode => $mode"
         ;;
+      p) 
+        variables=${OPTARG,,}
+        echo "variables => $variables"
       *)
         echo "ERROR: Unknown argument: $option"
         exit 1
