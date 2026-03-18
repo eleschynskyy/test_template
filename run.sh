@@ -8,7 +8,6 @@ parse_input_variables() {
   local input="$1"
   local result=""
   IFS=',' read -ra pairs <<< "$input"
-
   for p in "${pairs[@]}"; do
     result+=" -J$p"
   done
@@ -22,7 +21,6 @@ execute_test() {
     CMD="jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl $(parse_input_variables "$variables")"
     echo "Running $CMD"
     eval "$CMD"
-    # jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl $(parse_input_variables "$variables")
     cat $RESULTS_DIR/test.jtl
 }
 
