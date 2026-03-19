@@ -18,7 +18,7 @@ execute_test() {
     echo "Run jmeter test"
     TEST_DIR=$BASE_DIR/tests
     RESULTS_DIR=$BASE_DIR/results
-    CMD="jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl $(parse_input_variables "$variables")"
+    CMD="jmeter -n -t $TEST_DIR/test.jmx -l $RESULTS_DIR/test.jtl $(parse_input_variables "$variables") -Lorg.apache.jmeter.visualizers.backend=DEBUG"
     echo "Running $CMD"
     eval "$CMD"
     cat $RESULTS_DIR/test.jtl
@@ -59,7 +59,8 @@ parse_args() {
 }
 
 cleanup_workspace_logs() {
-  rm -r -f "${BASE_DIR}/jmeter.log"
+  # rm -r -f "${BASE_DIR}/jmeter.log"
+  echo 'cleanup_workspace_logs'
 }
 
 main() {
