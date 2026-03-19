@@ -1,6 +1,6 @@
 @Library("pipeline_library") _
 
 TestPipeline([
-    SERVICE_NAME: 'My_service_not_secret',
+    SERVICE_NAME: 'sandbox',
     VARIABLES: ['ORG', 'TOKEN']
 ])
