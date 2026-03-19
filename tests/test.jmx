@@ -8,7 +8,7 @@
       </elementProp>
     </TestPlan>
     <hashTree>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="false">
         <collectionProp name="Arguments.arguments">
           <elementProp name="influxdbUrl" elementType="Argument">
             <stringProp name="Argument.name">influxdbUrl</stringProp>
@@ -31,6 +31,34 @@
           <elementProp name="influxdbBucketName" elementType="Argument">
             <stringProp name="Argument.name">influxdbBucketName</stringProp>
             <stringProp name="Argument.value">${__property(INFLUXDB_BUCKET_NAME,,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="influxdbUrl" elementType="Argument">
+            <stringProp name="Argument.name">influxdbUrl</stringProp>
+            <stringProp name="Argument.value">http://localhost:8086</stringProp>
+            <stringProp name="Argument.desc"> </stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="influxdbOrg" elementType="Argument">
+            <stringProp name="Argument.name">influxdbOrg</stringProp>
+            <stringProp name="Argument.value">sandbox</stringProp>
+            <stringProp name="Argument.desc"> </stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="influxdbToken" elementType="Argument">
+            <stringProp name="Argument.name">influxdbToken</stringProp>
+            <stringProp name="Argument.value">19246FC1-BA7F-47E3-8DDE-2145E621DBB6</stringProp>
+            <stringProp name="Argument.desc"> </stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="influxdbBucketName" elementType="Argument">
+            <stringProp name="Argument.name">influxdbBucketName</stringProp>
+            <stringProp name="Argument.value">sandbox</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
