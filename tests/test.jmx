@@ -261,6 +261,11 @@
               <stringProp name="Argument.value"></stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
+            <elementProp name="TAG_testTitle" elementType="Argument">
+              <stringProp name="Argument.name">TAG_testTitle</stringProp>
+              <stringProp name="Argument.value">custom_title</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
             <elementProp name="influxdbToken" elementType="Argument">
               <stringProp name="Argument.name">influxdbToken</stringProp>
               <stringProp name="Argument.value">${influxdbToken}</stringProp>
