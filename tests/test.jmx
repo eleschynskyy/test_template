@@ -40,7 +40,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="influxdbUrl" elementType="Argument">
             <stringProp name="Argument.name">influxdbUrl</stringProp>
-            <stringProp name="Argument.value">http://localhost:8086</stringProp>
+            <stringProp name="Argument.value">http://influxdb.sandbox:8086</stringProp>
             <stringProp name="Argument.desc"> </stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
