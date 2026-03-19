@@ -61,6 +61,7 @@ parse_args() {
 cleanup_workspace_logs() {
   # rm -r -f "${BASE_DIR}/jmeter.log"
   echo 'cleanup_workspace_logs'
+  cat ${BASE_DIR}/jmeter.log
 }
 
 main() {
