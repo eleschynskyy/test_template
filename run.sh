@@ -151,6 +151,7 @@ main() {
       prepare_influx_bucket
       ;;
     run)
+      prepare_influx_bucket
       execute_test
       cleanup_workspace_logs
       ;;
