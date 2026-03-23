@@ -35,6 +35,11 @@
             <stringProp name="Argument.value">${__property(INFLUXDB_BUCKET_NAME,,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="testTitle" elementType="Argument">
+            <stringProp name="Argument.name">testTitle</stringProp>
+            <stringProp name="Argument.value">${__property(TEST_TITLE,,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -103,7 +108,7 @@
         <stringProp name="TestPlan.comments">Created from cURL on 2025-05-06T23:29:09.3531171</stringProp>
       </HeaderManager>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
         <stringProp name="ThreadGroup.num_threads">${__P(threads,1)}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${__P(rampup,1)}</stringProp>
         <stringProp name="ThreadGroup.duration">${__P(duration,3600)}</stringProp>
@@ -265,7 +270,7 @@
             </elementProp>
             <elementProp name="TAG_testTitle" elementType="Argument">
               <stringProp name="Argument.name">TAG_testTitle</stringProp>
-              <stringProp name="Argument.value">custom_title_bbb</stringProp>
+              <stringProp name="Argument.value">${testTitle}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="influxdbToken" elementType="Argument">
